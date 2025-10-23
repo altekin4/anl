@@ -1,0 +1,482 @@
+[
+  {
+    "id": 101,
+    "universityId": 1,
+    "universityName": "İstanbul Teknik Üniversitesi",
+    "name": "Bilgisayar Mühendisliği",
+    "faculty": "Mühendislik Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "SAY",
+    "aliases": [
+      "Bilgisayar"
+    ]
+  },
+  {
+    "id": 102,
+    "universityId": 1,
+    "universityName": "İstanbul Teknik Üniversitesi",
+    "name": "Elektrik-Elektronik Mühendisliği",
+    "faculty": "Mühendislik Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "SAY",
+    "aliases": [
+      "Elektrik-Elektronik"
+    ]
+  },
+  {
+    "id": 103,
+    "universityId": 1,
+    "universityName": "İstanbul Teknik Üniversitesi",
+    "name": "Makine Mühendisliği",
+    "faculty": "Mühendislik Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "SAY",
+    "aliases": [
+      "Makine"
+    ]
+  },
+  {
+    "id": 104,
+    "universityId": 1,
+    "universityName": "İstanbul Teknik Üniversitesi",
+    "name": "İnşaat Mühendisliği",
+    "faculty": "Mühendislik Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "SAY",
+    "aliases": [
+      "İnşaat"
+    ]
+  },
+  {
+    "id": 105,
+    "universityId": 1,
+    "universityName": "İstanbul Teknik Üniversitesi",
+    "name": "İşletme",
+    "faculty": "İktisadi ve İdari Bilimler Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "EA",
+    "aliases": [
+      "İşletme"
+    ]
+  },
+  {
+    "id": 106,
+    "universityId": 1,
+    "universityName": "İstanbul Teknik Üniversitesi",
+    "name": "İktisat",
+    "faculty": "İktisadi ve İdari Bilimler Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "EA",
+    "aliases": [
+      "İktisat"
+    ]
+  },
+  {
+    "id": 107,
+    "universityId": 1,
+    "universityName": "İstanbul Teknik Üniversitesi",
+    "name": "Hukuk",
+    "faculty": "Hukuk Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "EA",
+    "aliases": [
+      "Hukuk"
+    ]
+  },
+  {
+    "id": 108,
+    "universityId": 1,
+    "universityName": "İstanbul Teknik Üniversitesi",
+    "name": "Tıp",
+    "faculty": "Tıp Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "SAY",
+    "aliases": [
+      "Tıp"
+    ]
+  },
+  {
+    "id": 201,
+    "universityId": 2,
+    "universityName": "Boğaziçi Üniversitesi",
+    "name": "Bilgisayar Mühendisliği",
+    "faculty": "Mühendislik Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "SAY",
+    "aliases": [
+      "Bilgisayar"
+    ]
+  },
+  {
+    "id": 202,
+    "universityId": 2,
+    "universityName": "Boğaziçi Üniversitesi",
+    "name": "Elektrik-Elektronik Mühendisliği",
+    "faculty": "Mühendislik Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "SAY",
+    "aliases": [
+      "Elektrik-Elektronik"
+    ]
+  },
+  {
+    "id": 203,
+    "universityId": 2,
+    "universityName": "Boğaziçi Üniversitesi",
+    "name": "Makine Mühendisliği",
+    "faculty": "Mühendislik Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "SAY",
+    "aliases": [
+      "Makine"
+    ]
+  },
+  {
+    "id": 204,
+    "universityId": 2,
+    "universityName": "Boğaziçi Üniversitesi",
+    "name": "İnşaat Mühendisliği",
+    "faculty": "Mühendislik Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "SAY",
+    "aliases": [
+      "İnşaat"
+    ]
+  },
+  {
+    "id": 205,
+    "universityId": 2,
+    "universityName": "Boğaziçi Üniversitesi",
+    "name": "İşletme",
+    "faculty": "İktisadi ve İdari Bilimler Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "EA",
+    "aliases": [
+      "İşletme"
+    ]
+  },
+  {
+    "id": 206,
+    "universityId": 2,
+    "universityName": "Boğaziçi Üniversitesi",
+    "name": "İktisat",
+    "faculty": "İktisadi ve İdari Bilimler Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "EA",
+    "aliases": [
+      "İktisat"
+    ]
+  },
+  {
+    "id": 207,
+    "universityId": 2,
+    "universityName": "Boğaziçi Üniversitesi",
+    "name": "Hukuk",
+    "faculty": "Hukuk Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "EA",
+    "aliases": [
+      "Hukuk"
+    ]
+  },
+  {
+    "id": 208,
+    "universityId": 2,
+    "universityName": "Boğaziçi Üniversitesi",
+    "name": "Tıp",
+    "faculty": "Tıp Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "SAY",
+    "aliases": [
+      "Tıp"
+    ]
+  },
+  {
+    "id": 301,
+    "universityId": 3,
+    "universityName": "Orta Doğu Teknik Üniversitesi",
+    "name": "Bilgisayar Mühendisliği",
+    "faculty": "Mühendislik Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "SAY",
+    "aliases": [
+      "Bilgisayar"
+    ]
+  },
+  {
+    "id": 302,
+    "universityId": 3,
+    "universityName": "Orta Doğu Teknik Üniversitesi",
+    "name": "Elektrik-Elektronik Mühendisliği",
+    "faculty": "Mühendislik Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "SAY",
+    "aliases": [
+      "Elektrik-Elektronik"
+    ]
+  },
+  {
+    "id": 303,
+    "universityId": 3,
+    "universityName": "Orta Doğu Teknik Üniversitesi",
+    "name": "Makine Mühendisliği",
+    "faculty": "Mühendislik Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "SAY",
+    "aliases": [
+      "Makine"
+    ]
+  },
+  {
+    "id": 304,
+    "universityId": 3,
+    "universityName": "Orta Doğu Teknik Üniversitesi",
+    "name": "İnşaat Mühendisliği",
+    "faculty": "Mühendislik Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "SAY",
+    "aliases": [
+      "İnşaat"
+    ]
+  },
+  {
+    "id": 305,
+    "universityId": 3,
+    "universityName": "Orta Doğu Teknik Üniversitesi",
+    "name": "İşletme",
+    "faculty": "İktisadi ve İdari Bilimler Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "EA",
+    "aliases": [
+      "İşletme"
+    ]
+  },
+  {
+    "id": 306,
+    "universityId": 3,
+    "universityName": "Orta Doğu Teknik Üniversitesi",
+    "name": "İktisat",
+    "faculty": "İktisadi ve İdari Bilimler Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "EA",
+    "aliases": [
+      "İktisat"
+    ]
+  },
+  {
+    "id": 307,
+    "universityId": 3,
+    "universityName": "Orta Doğu Teknik Üniversitesi",
+    "name": "Hukuk",
+    "faculty": "Hukuk Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "EA",
+    "aliases": [
+      "Hukuk"
+    ]
+  },
+  {
+    "id": 308,
+    "universityId": 3,
+    "universityName": "Orta Doğu Teknik Üniversitesi",
+    "name": "Tıp",
+    "faculty": "Tıp Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "SAY",
+    "aliases": [
+      "Tıp"
+    ]
+  },
+  {
+    "id": 401,
+    "universityId": 4,
+    "universityName": "İstanbul Üniversitesi",
+    "name": "Bilgisayar Mühendisliği",
+    "faculty": "Mühendislik Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "SAY",
+    "aliases": [
+      "Bilgisayar"
+    ]
+  },
+  {
+    "id": 402,
+    "universityId": 4,
+    "universityName": "İstanbul Üniversitesi",
+    "name": "Elektrik-Elektronik Mühendisliği",
+    "faculty": "Mühendislik Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "SAY",
+    "aliases": [
+      "Elektrik-Elektronik"
+    ]
+  },
+  {
+    "id": 403,
+    "universityId": 4,
+    "universityName": "İstanbul Üniversitesi",
+    "name": "Makine Mühendisliği",
+    "faculty": "Mühendislik Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "SAY",
+    "aliases": [
+      "Makine"
+    ]
+  },
+  {
+    "id": 404,
+    "universityId": 4,
+    "universityName": "İstanbul Üniversitesi",
+    "name": "İnşaat Mühendisliği",
+    "faculty": "Mühendislik Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "SAY",
+    "aliases": [
+      "İnşaat"
+    ]
+  },
+  {
+    "id": 405,
+    "universityId": 4,
+    "universityName": "İstanbul Üniversitesi",
+    "name": "İşletme",
+    "faculty": "İktisadi ve İdari Bilimler Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "EA",
+    "aliases": [
+      "İşletme"
+    ]
+  },
+  {
+    "id": 406,
+    "universityId": 4,
+    "universityName": "İstanbul Üniversitesi",
+    "name": "İktisat",
+    "faculty": "İktisadi ve İdari Bilimler Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "EA",
+    "aliases": [
+      "İktisat"
+    ]
+  },
+  {
+    "id": 407,
+    "universityId": 4,
+    "universityName": "İstanbul Üniversitesi",
+    "name": "Hukuk",
+    "faculty": "Hukuk Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "EA",
+    "aliases": [
+      "Hukuk"
+    ]
+  },
+  {
+    "id": 408,
+    "universityId": 4,
+    "universityName": "İstanbul Üniversitesi",
+    "name": "Tıp",
+    "faculty": "Tıp Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "SAY",
+    "aliases": [
+      "Tıp"
+    ]
+  },
+  {
+    "id": 501,
+    "universityId": 5,
+    "universityName": "Ankara Üniversitesi",
+    "name": "Bilgisayar Mühendisliği",
+    "faculty": "Mühendislik Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "SAY",
+    "aliases": [
+      "Bilgisayar"
+    ]
+  },
+  {
+    "id": 502,
+    "universityId": 5,
+    "universityName": "Ankara Üniversitesi",
+    "name": "Elektrik-Elektronik Mühendisliği",
+    "faculty": "Mühendislik Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "SAY",
+    "aliases": [
+      "Elektrik-Elektronik"
+    ]
+  },
+  {
+    "id": 503,
+    "universityId": 5,
+    "universityName": "Ankara Üniversitesi",
+    "name": "Makine Mühendisliği",
+    "faculty": "Mühendislik Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "SAY",
+    "aliases": [
+      "Makine"
+    ]
+  },
+  {
+    "id": 504,
+    "universityId": 5,
+    "universityName": "Ankara Üniversitesi",
+    "name": "İnşaat Mühendisliği",
+    "faculty": "Mühendislik Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "SAY",
+    "aliases": [
+      "İnşaat"
+    ]
+  },
+  {
+    "id": 505,
+    "universityId": 5,
+    "universityName": "Ankara Üniversitesi",
+    "name": "İşletme",
+    "faculty": "İktisadi ve İdari Bilimler Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "EA",
+    "aliases": [
+      "İşletme"
+    ]
+  },
+  {
+    "id": 506,
+    "universityId": 5,
+    "universityName": "Ankara Üniversitesi",
+    "name": "İktisat",
+    "faculty": "İktisadi ve İdari Bilimler Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "EA",
+    "aliases": [
+      "İktisat"
+    ]
+  },
+  {
+    "id": 507,
+    "universityId": 5,
+    "universityName": "Ankara Üniversitesi",
+    "name": "Hukuk",
+    "faculty": "Hukuk Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "EA",
+    "aliases": [
+      "Hukuk"
+    ]
+  },
+  {
+    "id": 508,
+    "universityId": 5,
+    "universityName": "Ankara Üniversitesi",
+    "name": "Tıp",
+    "faculty": "Tıp Fakültesi",
+    "language": "Türkçe",
+    "scoreType": "SAY",
+    "aliases": [
+      "Tıp"
+    ]
+  }
+]

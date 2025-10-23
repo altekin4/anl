@@ -1,0 +1,192 @@
+[
+  {
+    "id": 1,
+    "department": "Yapay Zeka Mühendisliği",
+    "category": "Teknoloji",
+    "futureScore": 95,
+    "jobGrowth": "300%",
+    "averageSalary": "25000-50000 TL",
+    "requiredNets": {
+      "TYT": 85,
+      "AYT_SAY": 75
+    },
+    "universities": [
+      {"name": "İTÜ", "baseScore": 545, "quota": 40},
+      {"name": "ODTÜ", "baseScore": 540, "quota": 35},
+      {"name": "Boğaziçi", "baseScore": 550, "quota": 30}
+    ],
+    "skills": ["Python", "Machine Learning", "Deep Learning", "Matematik"],
+    "description": "AI ve makine öğrenmesi alanında uzmanlaşan mühendisler. Gelecekte en çok talep görecek meslek."
+  },
+  {
+    "id": 2,
+    "department": "Siber Güvenlik Mühendisliği",
+    "category": "Teknoloji",
+    "futureScore": 92,
+    "jobGrowth": "250%",
+    "averageSalary": "20000-40000 TL",
+    "requiredNets": {
+      "TYT": 80,
+      "AYT_SAY": 70
+    },
+    "universities": [
+      {"name": "Hacettepe", "baseScore": 520, "quota": 50},
+      {"name": "Bilkent", "baseScore": 535, "quota": 45},
+      {"name": "İTÜ", "baseScore": 540, "quota": 40}
+    ],
+    "skills": ["Network Security", "Ethical Hacking", "Cryptography"],
+    "description": "Dijital güvenlik uzmanları. Artan siber saldırılarla birlikte çok talep görecek."
+  },
+  {
+    "id": 3,
+    "department": "Veri Bilimi",
+    "category": "Teknoloji",
+    "futureScore": 90,
+    "jobGrowth": "200%",
+    "averageSalary": "18000-35000 TL",
+    "requiredNets": {
+      "TYT": 75,
+      "AYT_SAY": 65
+    },
+    "universities": [
+      {"name": "Koç Üniversitesi", "baseScore": 515, "quota": 60},
+      {"name": "Sabancı", "baseScore": 520, "quota": 55},
+      {"name": "İstanbul Teknik", "baseScore": 525, "quota": 50}
+    ],
+    "skills": ["Python", "R", "SQL", "Statistics", "Data Visualization"],
+    "description": "Büyük veriyi analiz eden uzmanlar. Her sektörde ihtiyaç duyuluyor."
+  },
+  {
+    "id": 4,
+    "department": "Biyomedikal Mühendisliği",
+    "category": "Sağlık-Teknoloji",
+    "futureScore": 88,
+    "jobGrowth": "180%",
+    "averageSalary": "15000-30000 TL",
+    "requiredNets": {
+      "TYT": 78,
+      "AYT_SAY": 68
+    },
+    "universities": [
+      {"name": "Boğaziçi", "baseScore": 530, "quota": 35},
+      {"name": "ODTÜ", "baseScore": 525, "quota": 40},
+      {"name": "Acıbadem", "baseScore": 510, "quota": 45}
+    ],
+    "skills": ["Biyoloji", "Mühendislik", "Tıbbi Cihazlar"],
+    "description": "Tıp ve teknoloji birleşimi. Yaşlanan nüfusla birlikte çok talep görecek."
+  },
+  {
+    "id": 5,
+    "department": "Çevre Mühendisliği",
+    "category": "Çevre-Sürdürülebilirlik",
+    "futureScore": 85,
+    "jobGrowth": "150%",
+    "averageSalary": "12000-25000 TL",
+    "requiredNets": {
+      "TYT": 70,
+      "AYT_SAY": 60
+    },
+    "universities": [
+      {"name": "ODTÜ", "baseScore": 505, "quota": 80},
+      {"name": "İTÜ", "baseScore": 510, "quota": 75},
+      {"name": "Yıldız Teknik", "baseScore": 495, "quota": 90}
+    ],
+    "skills": ["Çevre Bilimi", "Sürdürülebilirlik", "Proje Yönetimi"],
+    "description": "Çevre sorunları arttıkça daha çok ihtiyaç duyulacak alan."
+  },
+  {
+    "id": 6,
+    "department": "Dijital Pazarlama",
+    "category": "İşletme-Teknoloji",
+    "futureScore": 83,
+    "jobGrowth": "140%",
+    "averageSalary": "10000-25000 TL",
+    "requiredNets": {
+      "TYT": 65,
+      "AYT_EA": 55
+    },
+    "universities": [
+      {"name": "Boğaziçi İşletme", "baseScore": 520, "quota": 120},
+      {"name": "Koç İşletme", "baseScore": 515, "quota": 100},
+      {"name": "Bilgi İşletme", "baseScore": 485, "quota": 150}
+    ],
+    "skills": ["SEO", "Social Media", "Analytics", "Content Marketing"],
+    "description": "E-ticaret büyümesiyle birlikte çok talep gören alan."
+  },
+  {
+    "id": 7,
+    "department": "Oyun Tasarımı ve Programlama",
+    "category": "Teknoloji-Sanat",
+    "futureScore": 82,
+    "jobGrowth": "160%",
+    "averageSalary": "15000-35000 TL",
+    "requiredNets": {
+      "TYT": 72,
+      "AYT_SAY": 62
+    },
+    "universities": [
+      {"name": "Bahçeşehir", "baseScore": 490, "quota": 60},
+      {"name": "İstanbul Bilgi", "baseScore": 485, "quota": 80},
+      {"name": "Beykent", "baseScore": 470, "quota": 100}
+    ],
+    "skills": ["Unity", "C#", "3D Modeling", "Game Design"],
+    "description": "Oyun endüstrisi hızla büyüyor. Yaratıcılık ve teknik beceri gerektiriyor."
+  },
+  {
+    "id": 8,
+    "department": "Psikoloji (Klinik)",
+    "category": "Sağlık",
+    "futureScore": 80,
+    "jobGrowth": "120%",
+    "averageSalary": "8000-20000 TL",
+    "requiredNets": {
+      "TYT": 68,
+      "AYT_EA": 58
+    },
+    "universities": [
+      {"name": "Boğaziçi", "baseScore": 525, "quota": 45},
+      {"name": "ODTÜ", "baseScore": 520, "quota": 50},
+      {"name": "Ankara", "baseScore": 500, "quota": 80}
+    ],
+    "skills": ["Empati", "İletişim", "Analitik Düşünce"],
+    "description": "Mental sağlık bilincinin artmasıyla çok talep görecek."
+  },
+  {
+    "id": 9,
+    "department": "Yenilenebilir Enerji Mühendisliği",
+    "category": "Enerji-Çevre",
+    "futureScore": 87,
+    "jobGrowth": "170%",
+    "averageSalary": "14000-28000 TL",
+    "requiredNets": {
+      "TYT": 74,
+      "AYT_SAY": 64
+    },
+    "universities": [
+      {"name": "ODTÜ", "baseScore": 515, "quota": 70},
+      {"name": "İTÜ", "baseScore": 520, "quota": 65},
+      {"name": "Ege", "baseScore": 495, "quota": 85}
+    ],
+    "skills": ["Elektrik", "Fizik", "Proje Yönetimi", "Sürdürülebilirlik"],
+    "description": "Yeşil enerji dönüşümüyle birlikte çok talep görecek alan."
+  },
+  {
+    "id": 10,
+    "department": "UX/UI Tasarım",
+    "category": "Tasarım-Teknoloji",
+    "futureScore": 81,
+    "jobGrowth": "130%",
+    "averageSalary": "12000-30000 TL",
+    "requiredNets": {
+      "TYT": 60,
+      "AYT_EA": 50
+    },
+    "universities": [
+      {"name": "Mimar Sinan GSÜ", "baseScore": 480, "quota": 40},
+      {"name": "İstanbul Bilgi", "baseScore": 475, "quota": 60},
+      {"name": "Yaşar", "baseScore": 465, "quota": 80}
+    ],
+    "skills": ["Adobe Creative Suite", "Figma", "User Research", "Prototyping"],
+    "description": "Dijital ürünlerin kullanıcı deneyimi tasarımı. Her şirketin ihtiyacı var."
+  }
+]

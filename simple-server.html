@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tercih Sihirbazı - Localhost</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 1200px;
+            min-height: 700px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1.2rem;
+        }
+
+        .status-section {
+            padding: 40px;
+            background: #f8fafc;
+        }
+
+        .status-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid #667eea;
+        }
+
+        .status-card h3 {
+            color: #334155;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            padding: 10px;
+            background: #f1f5f9;
+            border-radius: 8px;
+        }
+
+        .status-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .status-working {
+            background: #10b981;
+            color: white;
+        }
+
+        .status-pending {
+            background: #f59e0b;
+            color: white;
+        }
+
+        .status-error {
+            background: #ef4444;
+            color: white;
+        }
+
+        .demo-section {
+            padding: 40px;
+            background: white;
+        }
+
+        .demo-card {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .demo-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .demo-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .instructions {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .instructions h4 {
+            color: #92400e;
+            margin-bottom: 10px;
+        }
+
+        .instructions ol {
+            color: #78350f;
+            padding-left: 20px;
+        }
+
+        .instructions li {
+            margin-bottom: 8px;
+        }
+
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 5px 0;
+            color: #64748b;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+            
+            .header {
+                padding: 25px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .status-section, .demo-section {
+                padding: 25px;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🧙‍♂️ Tercih Sihirbazı</h1>
+            <p>Üniversite Tercih Danışmanı - Localhost Durumu</p>
+        </header>
+        
+        <div class="status-section">
+            <div class="status-card">
+                <h3>📊 Sistem Durumu</h3>
+                <div class="status-item">
+                    <div class="status-icon status-working">✓</div>
+                    <span><strong>Frontend:</strong> Hazır ve çalışıyor</span>
+                </div>
+                <div class="status-item">
+                    <div class="status-icon status-pending">⏳</div>
+                    <span><strong>Node.js:</strong> PATH güncellemesi bekleniyor</span>
+                </div>
+                <div class="status-item">
+                    <div class="status-icon status-pending">⏳</div>
+                    <span><strong>Backend:</strong> Node.js kurulumu sonrası aktif olacak</span>
+                </div>
+                <div class="status-item">
+                    <div class="status-icon status-working">✓</div>
+                    <span><strong>Demo Modu:</strong> Aktif</span>
+                </div>
+            </div>
+
+            <div class="instructions">
+                <h4>🚀 Node.js Kurulumu Sonrası Yapılacaklar:</h4>
+                <ol>
+                    <li>PowerShell/CMD'yi yeniden başlatın</li>
+                    <li>Proje klasörüne gidin: <code>cd C:\Users\AnılTekin\Desktop\chatbot</code></li>
+                    <li>Bağımlılıkları kurun: <code>npm install</code></li>
+                    <li>Sunucuyu başlatın: <code>npm run dev</code></li>
+                    <li>Tarayıcıda açın: <code>http://localhost:3000</code></li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <div class="demo-card">
+                <h3>🎯 Mevcut Demo Seçenekleri</h3>
+                <p>Node.js kurulumu tamamlanana kadar demo versiyonları kullanabilirsiniz:</p>
+                
+                <a href="standalone.html" class="demo-button" target="_blank">
+                    🎨 Standalone Demo
+                </a>
+                
+                <a href="public/index.html" class="demo-button" target="_blank">
+                    🌐 Frontend Demo
+                </a>
+                
+                <button class="demo-button" onclick="checkNodeJS()">
+                    🔍 Node.js Durumunu Kontrol Et
+                </button>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>🎨 Frontend Özellikleri</h4>
+                    <ul class="feature-list">
+                        <li>Responsive tasarım</li>
+                        <li>Modern chat arayüzü</li>
+                        <li>Mobil uyumlu</li>
+                        <li>Türkçe dil desteği</li>
+                        <li>Gerçek zamanlı mesajlaşma UI</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>⚙️ Backend Özellikleri</h4>
+                    <ul class="feature-list">
+                        <li>Node.js + TypeScript</li>
+                        <li>Express.js framework</li>
+                        <li>WebSocket desteği</li>
+                        <li>PostgreSQL entegrasyonu</li>
+                        <li>Redis cache sistemi</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🤖 AI Özellikleri</h4>
+                    <ul class="feature-list">
+                        <li>Doğal dil işleme</li>
+                        <li>Akıllı soru-cevap</li>
+                        <li>Net hesaplama</li>
+                        <li>Üniversite önerileri</li>
+                        <li>Tercih stratejileri</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🔒 Güvenlik</h4>
+                    <ul class="feature-list">
+                        <li>Rate limiting</li>
+                        <li>Input validation</li>
+                        <li>CORS koruması</li>
+                        <li>XSS önleme</li>
+                        <li>Secure headers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkNodeJS() {
+            // Bu fonksiyon tarayıcıda Node.js varlığını kontrol edemez
+            // Sadece kullanıcıya bilgi verir
+            alert('Node.js kontrolü için:\n\n1. PowerShell/CMD açın\n2. "node --version" yazın\n3. Versiyon numarası görürseniz kurulum başarılı\n4. Görmezseniz PowerShell\'i yeniden başlatın');
+        }
+
+        // Sayfa yüklendiğinde bilgi göster
+        window.addEventListener('load', function() {
+            console.log('🎯 Tercih Sihirbazı Localhost Durumu');
+            console.log('📁 Proje klasörü: C:\\Users\\AnılTekin\\Desktop\\chatbot');
+            console.log('🚀 Node.js kurulumu sonrası çalıştırma komutları:');
+            console.log('   npm install');
+            console.log('   npm run dev');
+            console.log('🌐 Hedef URL: http://localhost:3000');
+        });
+
+        // Otomatik yenileme (Node.js aktif olup olmadığını kontrol etmek için)
+        setInterval(function() {
+            // Fetch ile localhost:3000'i kontrol et
+            fetch('http://localhost:3000/health')
+                .then(response => {
+                    if (response.ok) {
+                        // Sunucu aktif, yönlendir
+                        window.location.href = 'http://localhost:3000';
+                    }
+                })
+                .catch(() => {
+                    // Sunucu henüz aktif değil, sessizce devam et
+                });
+        }, 5000); // 5 saniyede bir kontrol et
+    </script>
+</body>
+</html>

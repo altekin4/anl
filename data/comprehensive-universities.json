@@ -1,0 +1,332 @@
+[
+  {
+    "id": 1,
+    "name": "İstanbul Teknik Üniversitesi",
+    "shortName": "İTÜ",
+    "city": "İstanbul",
+    "type": "Devlet",
+    "tier": "Üst",
+    "ranking": 1,
+    "departments": {
+      "Bilgisayar Mühendisliği": {
+        "SAY": {"baseScore": 545, "quota": 120, "rank": 8500},
+        "EA": {"baseScore": 535, "quota": 30, "rank": 12000}
+      },
+      "Elektrik-Elektronik Mühendisliği": {
+        "SAY": {"baseScore": 540, "quota": 150, "rank": 9500}
+      },
+      "Makine Mühendisliği": {
+        "SAY": {"baseScore": 535, "quota": 180, "rank": 11000}
+      },
+      "İnşaat Mühendisliği": {
+        "SAY": {"baseScore": 525, "quota": 200, "rank": 15000}
+      }
+    }
+  },
+  {
+    "id": 2,
+    "name": "Boğaziçi Üniversitesi",
+    "shortName": "Boğaziçi",
+    "city": "İstanbul",
+    "type": "Devlet",
+    "tier": "Üst",
+    "ranking": 2,
+    "departments": {
+      "Bilgisayar Mühendisliği": {
+        "SAY": {"baseScore": 550, "quota": 80, "rank": 7500},
+        "EA": {"baseScore": 540, "quota": 20, "rank": 11000}
+      },
+      "Elektrik-Elektronik Mühendisliği": {
+        "SAY": {"baseScore": 545, "quota": 100, "rank": 8500}
+      },
+      "İşletme": {
+        "EA": {"baseScore": 530, "quota": 120, "rank": 13500},
+        "SAY": {"baseScore": 520, "quota": 40, "rank": 17000}
+      },
+      "İktisat": {
+        "EA": {"baseScore": 515, "quota": 100, "rank": 20000}
+      }
+    }
+  },
+  {
+    "id": 3,
+    "name": "Orta Doğu Teknik Üniversitesi",
+    "shortName": "ODTÜ",
+    "city": "Ankara",
+    "type": "Devlet",
+    "tier": "Üst",
+    "ranking": 3,
+    "departments": {
+      "Bilgisayar Mühendisliği": {
+        "SAY": {"baseScore": 540, "quota": 100, "rank": 9500}
+      },
+      "Elektrik-Elektronik Mühendisliği": {
+        "SAY": {"baseScore": 535, "quota": 120, "rank": 11000}
+      },
+      "Makine Mühendisliği": {
+        "SAY": {"baseScore": 530, "quota": 140, "rank": 13000}
+      },
+      "Çevre Mühendisliği": {
+        "SAY": {"baseScore": 510, "quota": 80, "rank": 22000}
+      }
+    }
+  },
+  {
+    "id": 4,
+    "name": "Hacettepe Üniversitesi",
+    "shortName": "Hacettepe",
+    "city": "Ankara",
+    "type": "Devlet",
+    "tier": "Üst",
+    "ranking": 4,
+    "departments": {
+      "Tıp": {
+        "SAY": {"baseScore": 565, "quota": 180, "rank": 3500}
+      },
+      "Bilgisayar Mühendisliği": {
+        "SAY": {"baseScore": 525, "quota": 90, "rank": 15000}
+      },
+      "Psikoloji": {
+        "EA": {"baseScore": 520, "quota": 60, "rank": 17000}
+      }
+    }
+  },
+  {
+    "id": 5,
+    "name": "Ankara Üniversitesi",
+    "shortName": "AÜ",
+    "city": "Ankara",
+    "type": "Devlet",
+    "tier": "Orta-Üst",
+    "ranking": 8,
+    "departments": {
+      "Tıp": {
+        "SAY": {"baseScore": 555, "quota": 200, "rank": 5000}
+      },
+      "Hukuk": {
+        "EA": {"baseScore": 505, "quota": 150, "rank": 25000}
+      },
+      "İşletme": {
+        "EA": {"baseScore": 485, "quota": 120, "rank": 35000}
+      },
+      "Psikoloji": {
+        "EA": {"baseScore": 500, "quota": 80, "rank": 28000}
+      }
+    }
+  },
+  {
+    "id": 6,
+    "name": "İstanbul Üniversitesi",
+    "shortName": "İÜ",
+    "city": "İstanbul",
+    "type": "Devlet",
+    "tier": "Orta-Üst",
+    "ranking": 7,
+    "departments": {
+      "Tıp": {
+        "SAY": {"baseScore": 560, "quota": 220, "rank": 4000}
+      },
+      "Hukuk": {
+        "EA": {"baseScore": 510, "quota": 180, "rank": 22000}
+      },
+      "İşletme": {
+        "EA": {"baseScore": 490, "quota": 140, "rank": 32000}
+      },
+      "Bilgisayar Mühendisliği": {
+        "SAY": {"baseScore": 515, "quota": 100, "rank": 20000}
+      }
+    }
+  },
+  {
+    "id": 7,
+    "name": "Gazi Üniversitesi",
+    "shortName": "Gazi",
+    "city": "Ankara",
+    "type": "Devlet",
+    "tier": "Orta",
+    "ranking": 12,
+    "departments": {
+      "Bilgisayar Mühendisliği": {
+        "SAY": {"baseScore": 505, "quota": 120, "rank": 25000}
+      },
+      "Makine Mühendisliği": {
+        "SAY": {"baseScore": 495, "quota": 150, "rank": 30000}
+      },
+      "İşletme": {
+        "EA": {"baseScore": 475, "quota": 160, "rank": 42000}
+      },
+      "Eğitim Fakültesi": {
+        "EA": {"baseScore": 450, "quota": 200, "rank": 60000}
+      }
+    }
+  },
+  {
+    "id": 8,
+    "name": "Marmara Üniversitesi",
+    "shortName": "Marmara",
+    "city": "İstanbul",
+    "type": "Devlet",
+    "tier": "Orta",
+    "ranking": 10,
+    "departments": {
+      "Tıp": {
+        "SAY": {"baseScore": 550, "quota": 160, "rank": 6500}
+      },
+      "Bilgisayar Mühendisliği": {
+        "SAY": {"baseScore": 510, "quota": 110, "rank": 22000}
+      },
+      "İşletme": {
+        "EA": {"baseScore": 480, "quota": 180, "rank": 38000}
+      },
+      "Hukuk": {
+        "EA": {"baseScore": 495, "quota": 140, "rank": 30000}
+      }
+    }
+  },
+  {
+    "id": 9,
+    "name": "Ege Üniversitesi",
+    "shortName": "Ege",
+    "city": "İzmir",
+    "type": "Devlet",
+    "tier": "Orta-Üst",
+    "ranking": 9,
+    "departments": {
+      "Tıp": {
+        "SAY": {"baseScore": 545, "quota": 180, "rank": 8500}
+      },
+      "Bilgisayar Mühendisliği": {
+        "SAY": {"baseScore": 500, "quota": 100, "rank": 28000}
+      },
+      "Çevre Mühendisliği": {
+        "SAY": {"baseScore": 485, "quota": 80, "rank": 35000}
+      },
+      "İşletme": {
+        "EA": {"baseScore": 470, "quota": 150, "rank": 45000}
+      }
+    }
+  },
+  {
+    "id": 10,
+    "name": "Yıldız Teknik Üniversitesi",
+    "shortName": "YTÜ",
+    "city": "İstanbul",
+    "type": "Devlet",
+    "tier": "Orta",
+    "ranking": 15,
+    "departments": {
+      "Bilgisayar Mühendisliği": {
+        "SAY": {"baseScore": 495, "quota": 130, "rank": 30000}
+      },
+      "Makine Mühendisliği": {
+        "SAY": {"baseScore": 485, "quota": 160, "rank": 35000}
+      },
+      "İnşaat Mühendisliği": {
+        "SAY": {"baseScore": 475, "quota": 180, "rank": 42000}
+      },
+      "Çevre Mühendisliği": {
+        "SAY": {"baseScore": 465, "quota": 90, "rank": 50000}
+      }
+    }
+  },
+  {
+    "id": 11,
+    "name": "Sakarya Üniversitesi",
+    "shortName": "SAÜ",
+    "city": "Sakarya",
+    "type": "Devlet",
+    "tier": "Orta",
+    "ranking": 25,
+    "departments": {
+      "Bilgisayar Mühendisliği": {
+        "SAY": {"baseScore": 475, "quota": 120, "rank": 42000}
+      },
+      "Makine Mühendisliği": {
+        "SAY": {"baseScore": 465, "quota": 140, "rank": 50000}
+      },
+      "İşletme": {
+        "EA": {"baseScore": 450, "quota": 180, "rank": 60000}
+      }
+    }
+  },
+  {
+    "id": 12,
+    "name": "Kocaeli Üniversitesi",
+    "shortName": "KOÜ",
+    "city": "Kocaeli",
+    "type": "Devlet",
+    "tier": "Orta",
+    "ranking": 30,
+    "departments": {
+      "Bilgisayar Mühendisliği": {
+        "SAY": {"baseScore": 470, "quota": 100, "rank": 45000}
+      },
+      "Makine Mühendisliği": {
+        "SAY": {"baseScore": 460, "quota": 120, "rank": 52000}
+      },
+      "İşletme": {
+        "EA": {"baseScore": 445, "quota": 160, "rank": 65000}
+      }
+    }
+  },
+  {
+    "id": 13,
+    "name": "Eskişehir Osmangazi Üniversitesi",
+    "shortName": "ESOGÜ",
+    "city": "Eskişehir",
+    "type": "Devlet",
+    "tier": "Orta-Alt",
+    "ranking": 35,
+    "departments": {
+      "Bilgisayar Mühendisliği": {
+        "SAY": {"baseScore": 460, "quota": 90, "rank": 52000}
+      },
+      "Makine Mühendisliği": {
+        "SAY": {"baseScore": 450, "quota": 110, "rank": 60000}
+      },
+      "İşletme": {
+        "EA": {"baseScore": 435, "quota": 140, "rank": 75000}
+      }
+    }
+  },
+  {
+    "id": 14,
+    "name": "Süleyman Demirel Üniversitesi",
+    "shortName": "SDÜ",
+    "city": "Isparta",
+    "type": "Devlet",
+    "tier": "Orta-Alt",
+    "ranking": 40,
+    "departments": {
+      "Bilgisayar Mühendisliği": {
+        "SAY": {"baseScore": 455, "quota": 80, "rank": 55000}
+      },
+      "Makine Mühendisliği": {
+        "SAY": {"baseScore": 445, "quota": 100, "rank": 65000}
+      },
+      "İşletme": {
+        "EA": {"baseScore": 430, "quota": 120, "rank": 80000}
+      }
+    }
+  },
+  {
+    "id": 15,
+    "name": "Ondokuz Mayıs Üniversitesi",
+    "shortName": "OMÜ",
+    "city": "Samsun",
+    "type": "Devlet",
+    "tier": "Orta-Alt",
+    "ranking": 42,
+    "departments": {
+      "Bilgisayar Mühendisliği": {
+        "SAY": {"baseScore": 450, "quota": 85, "rank": 60000}
+      },
+      "Makine Mühendisliği": {
+        "SAY": {"baseScore": 440, "quota": 95, "rank": 70000}
+      },
+      "İşletme": {
+        "EA": {"baseScore": 425, "quota": 130, "rank": 85000}
+      }
+    }
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "name": "tercih-sihirbazi",
+  "version": "2024.3.0",
+  "description": "AI-powered university preference counseling chatbot for Turkish students with 2024 YÖK Atlas data",
+  "main": "simple-server-updated.js",
+  "scripts": {
+    "start": "node simple-server-updated.js",
+    "dev": "node simple-server-updated.js",
+    "import-data": "node import-yok-data.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "university",
+    "counseling",
+    "chatbot",
+    "ai",
+    "yks",
+    "tyt",
+    "ayt",
+    "yok-atlas",
+    "turkish-education",
+    "career-guidance"
+  ],
+  "author": "Tercih Sihirbazı Team",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "dotenv": "^16.3.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/tercih-sihirbazi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YOUR_USERNAME/tercih-sihirbazi/issues"
+  },
+  "homepage": "https://github.com/YOUR_USERNAME/tercih-sihirbazi#readme"
+}

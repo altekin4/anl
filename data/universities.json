@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "name": "İstanbul Teknik Üniversitesi",
+    "city": "İstanbul",
+    "type": "Devlet",
+    "founded": 1773,
+    "aliases": [
+      "İTÜ",
+      "İ.T.Ü.",
+      "ITU"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Boğaziçi Üniversitesi",
+    "city": "İstanbul",
+    "type": "Devlet",
+    "founded": 1863,
+    "aliases": [
+      "Boğaziçi",
+      "BÜ",
+      "Bosphorus"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Orta Doğu Teknik Üniversitesi",
+    "city": "Ankara",
+    "type": "Devlet",
+    "founded": 1956,
+    "aliases": [
+      "ODTÜ",
+      "METU"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "İstanbul Üniversitesi",
+    "city": "İstanbul",
+    "type": "Devlet",
+    "founded": 1453,
+    "aliases": [
+      "İÜ",
+      "İstanbul Üni"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Ankara Üniversitesi",
+    "city": "Ankara",
+    "type": "Devlet",
+    "founded": 1946,
+    "aliases": [
+      "AÜ",
+      "Ankara Üni"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Hacettepe Üniversitesi",
+    "city": "Ankara",
+    "type": "Devlet",
+    "founded": 1967,
+    "aliases": [
+      "Hacettepe",
+      "HÜ"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Gazi Üniversitesi",
+    "city": "Ankara",
+    "type": "Devlet",
+    "founded": 1926,
+    "aliases": [
+      "Gazi",
+      "GÜ"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Marmara Üniversitesi",
+    "city": "İstanbul",
+    "type": "Devlet",
+    "founded": 1883,
+    "aliases": [
+      "Marmara",
+      "MÜ"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Ege Üniversitesi",
+    "city": "İzmir",
+    "type": "Devlet",
+    "founded": 1955,
+    "aliases": [
+      "Ege",
+      "EÜ"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Koç Üniversitesi",
+    "city": "İstanbul",
+    "type": "Vakıf",
+    "founded": 1993,
+    "aliases": [
+      "Koç",
+      "KÜ"
+    ]
+  }
+]

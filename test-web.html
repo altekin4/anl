@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TYT/AYT Test - Tercih Sihirbazı</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            background: #f9f9f9;
+        }
+        
+        .test-section h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+            transition: transform 0.2s;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .result {
+            margin-top: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            white-space: pre-wrap;
+            font-family: monospace;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .loading {
+            color: #667eea;
+            font-style: italic;
+        }
+        
+        .success {
+            color: #28a745;
+        }
+        
+        .error {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 TYT/AYT Hesaplama Test Sistemi</h1>
+        
+        <div class="test-section">
+            <h3>📊 TYT Hesaplama Testleri</h3>
+            <button onclick="testTYT('TYT Matematik 35 doğru 5 yanlış')">TYT Matematik Test</button>
+            <button onclick="testTYT('TYT Türkçe 38 doğru 2 yanlış')">TYT Türkçe Test</button>
+            <button onclick="testTYT('TYT netimi hesapla')">TYT Genel Test</button>
+            <div id="tyt-result" class="result" style="display:none;"></div>
+        </div>
+        
+        <div class="test-section">
+            <h3>📈 AYT Hesaplama Testleri</h3>
+            <button onclick="testAYT('AYT SAY hesaplama')">AYT SAY Test</button>
+            <button onclick="testAYT('AYT Matematik 35 doğru 5 yanlış')">AYT Matematik Test</button>
+            <button onclick="testAYT('AYT Fizik 12 doğru 2 yanlış')">AYT Fizik Test</button>
+            <div id="ayt-result" class="result" style="display:none;"></div>
+        </div>
+        
+        <div class="test-section">
+            <h3>💡 Tavsiye Testleri</h3>
+            <button onclick="testAdvice('Başarılı öğrencilerden tavsiye al')">Genel Tavsiye</button>
+            <button onclick="testAdvice('Çalışma yöntemi tavsiyesi')">Çalışma Yöntemi</button>
+            <button onclick="testAdvice('Motivasyon tavsiyesi')">Motivasyon</button>
+            <div id="advice-result" class="result" style="display:none;"></div>
+        </div>
+        
+        <div class="test-section">
+            <h3>🤖 Genel Testler</h3>
+            <button onclick="testGeneral('Merhaba')">Selamlama</button>
+            <button onclick="testGeneral('İTÜ taban puanları')">Taban Puan</button>
+            <button onclick="testGeneral('Bilgisayar mühendisliği için kaç net gerekir')">Net Hesaplama</button>
+            <div id="general-result" class="result" style="display:none;"></div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:3001';
+        
+        async function sendMessage(message, resultElementId) {
+            const resultElement = document.getElementById(resultElementId);
+            resultElement.style.display = 'block';
+            resultElement.innerHTML = '<span class="loading">🔄 İşleniyor...</span>';
+            
+            try {
+                const response = await fetch(`${API_BASE}/api/chat`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        message: message,
+                        sessionId: 'test-session-' + Date.now()
+                    })
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                
+                let resultText = `🤖 AI Yanıtı:\n\n${data.content}\n\n`;
+                resultText += `📋 Detaylar:\n`;
+                resultText += `• Intent: ${data.intent}\n`;
+                resultText += `• Entities: ${JSON.stringify(data.entities, null, 2)}\n`;
+                if (data.suggestions) {
+                    resultText += `• Öneriler: ${data.suggestions.join(', ')}\n`;
+                }
+                
+                resultElement.innerHTML = `<span class="success">${resultText}</span>`;
+                
+            } catch (error) {
+                console.error('API Hatası:', error);
+                resultElement.innerHTML = `<span class="error">❌ Hata: ${error.message}</span>`;
+            }
+        }
+        
+        function testTYT(message) {
+            sendMessage(message, 'tyt-result');
+        }
+        
+        function testAYT(message) {
+            sendMessage(message, 'ayt-result');
+        }
+        
+        function testAdvice(message) {
+            sendMessage(message, 'advice-result');
+        }
+        
+        function testGeneral(message) {
+            sendMessage(message, 'general-result');
+        }
+        
+        // Sayfa yüklendiğinde test
+        window.onload = function() {
+            console.log('🎓 TYT/AYT Test Sistemi hazır!');
+            console.log('Server URL:', API_BASE);
+        };
+    </script>
+</body>
+</html>

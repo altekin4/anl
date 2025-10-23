@@ -1,0 +1,275 @@
+/* EOS Platform Integration Styles */
+
+/* CSS Custom Properties for EOS Theme */
+:root {
+  --eos-primary-color: #2563eb;
+  --eos-secondary-color: #64748b;
+  --eos-background-color: #f8fafc;
+  --eos-text-color: #1e293b;
+  --eos-header-color: #1e40af;
+  --eos-sidebar-color: #334155;
+  --eos-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --eos-border-radius: 8px;
+  --eos-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* EOS Theme Application */
+.eos-theme {
+  font-family: var(--eos-font-family);
+  color: var(--eos-text-color);
+}
+
+.eos-theme .chat-container {
+  background: var(--eos-background-color);
+  border-radius: var(--eos-border-radius);
+  box-shadow: var(--eos-shadow);
+}
+
+.eos-theme .chat-header {
+  background: linear-gradient(135deg, var(--eos-primary-color) 0%, var(--eos-header-color) 100%);
+  color: white;
+}
+
+/* EOS Breadcrumb Navigation */
+.eos-breadcrumb {
+  background: var(--eos-background-color);
+  border-bottom: 1px solid #e2e8f0;
+  padding: 12px 24px;
+  font-size: 14px;
+}
+
+.eos-breadcrumb-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.eos-breadcrumb-item {
+  display: flex;
+  align-items: center;
+}
+
+.eos-breadcrumb-item:not(:last-child)::after {
+  content: '/';
+  margin: 0 8px;
+  color: var(--eos-secondary-color);
+}
+
+.eos-breadcrumb-link {
+  color: var(--eos-primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.eos-breadcrumb-link:hover {
+  color: var(--eos-header-color);
+  text-decoration: underline;
+}
+
+.eos-breadcrumb-item.current {
+  color: var(--eos-text-color);
+  font-weight: 500;
+}
+
+/* EOS Back Button */
+.eos-back-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 8px 16px;
+  border-radius: var(--eos-border-radius);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 16px;
+}
+
+.eos-back-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.eos-back-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* EOS Embedded Mode */
+.eos-embedded {
+  padding: 0;
+  background: var(--eos-background-color);
+}
+
+.eos-embedded .chat-container {
+  height: 100vh;
+  max-width: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.eos-embedded .chat-header {
+  padding: 16px 24px;
+}
+
+.eos-embedded .chat-header h1 {
+  font-size: 24px;
+}
+
+/* EOS User Info */
+.eos-user-info {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 6px 12px;
+  border-radius: var(--eos-border-radius);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* EOS Message Styling */
+.eos-theme .bot-message {
+  background: var(--eos-background-color);
+  border: 1px solid #e2e8f0;
+}
+
+.eos-theme .user-message {
+  background: var(--eos-primary-color);
+  color: white;
+}
+
+.eos-theme .example-question {
+  border: 1px solid var(--eos-primary-color);
+  color: var(--eos-primary-color);
+}
+
+.eos-theme .example-question:hover {
+  background: var(--eos-primary-color);
+  color: white;
+}
+
+.eos-theme .message-input {
+  border: 2px solid #e2e8f0;
+  border-radius: var(--eos-border-radius);
+}
+
+.eos-theme .message-input:focus {
+  border-color: var(--eos-primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.eos-theme .send-button {
+  background: var(--eos-primary-color);
+  border-radius: var(--eos-border-radius);
+}
+
+.eos-theme .send-button:hover:not(:disabled) {
+  background: var(--eos-header-color);
+}
+
+/* EOS Loading States */
+.eos-theme .typing-indicator .typing-dots span {
+  background: var(--eos-primary-color);
+}
+
+/* EOS Responsive Design */
+@media (max-width: 768px) {
+  .eos-breadcrumb {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+  
+  .eos-back-button {
+    padding: 6px 12px;
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+  
+  .eos-embedded .chat-header {
+    padding: 12px 16px;
+  }
+  
+  .eos-user-info {
+    position: static;
+    margin-top: 8px;
+    display: inline-block;
+  }
+}
+
+/* EOS Dark Theme Support */
+@media (prefers-color-scheme: dark) {
+  .eos-theme.dark {
+    --eos-background-color: #0f172a;
+    --eos-text-color: #f1f5f9;
+    --eos-secondary-color: #64748b;
+  }
+  
+  .eos-theme.dark .chat-container {
+    background: var(--eos-background-color);
+    color: var(--eos-text-color);
+  }
+  
+  .eos-theme.dark .eos-breadcrumb {
+    background: #1e293b;
+    border-bottom-color: #334155;
+  }
+  
+  .eos-theme.dark .bot-message {
+    background: #1e293b;
+    border-color: #334155;
+    color: var(--eos-text-color);
+  }
+}
+
+/* EOS Animation Enhancements */
+.eos-theme .message {
+  animation: eosSlideIn 0.3s ease-out;
+}
+
+@keyframes eosSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* EOS Focus Management */
+.eos-theme *:focus {
+  outline: 2px solid var(--eos-primary-color);
+  outline-offset: 2px;
+}
+
+.eos-theme button:focus,
+.eos-theme input:focus,
+.eos-theme textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* EOS High Contrast Mode */
+@media (prefers-contrast: high) {
+  .eos-theme {
+    --eos-primary-color: #1d4ed8;
+    --eos-secondary-color: #374151;
+  }
+  
+  .eos-theme .chat-container {
+    border: 2px solid var(--eos-text-color);
+  }
+  
+  .eos-theme .message {
+    border: 1px solid var(--eos-text-color);
+  }
+}

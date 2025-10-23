@@ -1,0 +1,145 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  database:
+    image: postgres:15-alpine
+    container_name: tercih-sihirbazi-db
+    environment:
+      POSTGRES_DB: tercih_sihirbazi
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --locale=C"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./src/database/migrations:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+    networks:
+      - tercih-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d tercih_sihirbazi"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # Redis Cache (Optional)
+  redis:
+    image: redis:7-alpine
+    container_name: tercih-sihirbazi-redis
+    command: redis-server --appendonly yes --requirepass redispassword
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    networks:
+      - tercih-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "--raw", "incr", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    restart: unless-stopped
+
+  # Backend API (Full TypeScript version)
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: tercih-sihirbazi-backend
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DB_HOST: database
+      DB_PORT: 5432
+      DB_NAME: tercih_sihirbazi
+      DB_USER: postgres
+      DB_PASSWORD: password
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: redispassword
+      JWT_SECRET: production-jwt-secret-change-this
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      EOS_API_BASE_URL: ${EOS_API_BASE_URL:-http://localhost:8000}
+      EOS_API_KEY: ${EOS_API_KEY:-}
+    ports:
+      - "3000:3000"
+    depends_on:
+      database:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - tercih-network
+    volumes:
+      - ./logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Simple Server (for quick testing without database)
+  simple-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.simple
+    container_name: tercih-sihirbazi-simple
+    environment:
+      NODE_ENV: development
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+    ports:
+      - "3001:3001"
+    networks:
+      - tercih-network
+    restart: unless-stopped
+    profiles:
+      - simple
+
+  # Frontend (Nginx)
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: tercih-sihirbazi-frontend
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - backend
+    networks:
+      - tercih-network
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    restart: unless-stopped
+    profiles:
+      - frontend
+
+  # Adminer (Database Management)
+  adminer:
+    image: adminer:latest
+    container_name: tercih-sihirbazi-adminer
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+    networks:
+      - tercih-network
+    restart: unless-stopped
+    profiles:
+      - tools
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+
+networks:
+  tercih-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

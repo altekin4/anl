@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tercih Sihirbazı - Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .chat-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .chat-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .chat-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+            background: #f8fafc;
+        }
+
+        .message {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .bot-message {
+            justify-content: flex-start;
+        }
+
+        .user-message {
+            justify-content: flex-end;
+        }
+
+        .message-content {
+            max-width: 70%;
+            padding: 15px 20px;
+            border-radius: 18px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .bot-message .message-content {
+            background: white;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .user-message .message-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .welcome-message ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .welcome-message li {
+            margin-bottom: 8px;
+        }
+
+        .example-questions {
+            margin-top: 25px;
+            padding: 20px;
+            background: #f1f5f9;
+            border-radius: 12px;
+        }
+
+        .example-questions h3 {
+            color: #334155;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .example-question {
+            background: white;
+            padding: 12px 16px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 1px solid #e2e8f0;
+            font-size: 0.9rem;
+            color: #475569;
+        }
+
+        .example-question:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .example-question:last-child {
+            margin-bottom: 0;
+        }
+
+        .chat-input-container {
+            padding: 20px 30px;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .input-wrapper {
+            display: flex;
+            align-items: flex-end;
+            gap: 12px;
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 12px;
+            transition: border-color 0.2s ease;
+        }
+
+        .input-wrapper:focus-within {
+            border-color: #667eea;
+        }
+
+        #messageInput {
+            flex: 1;
+            border: none;
+            background: transparent;
+            resize: none;
+            font-family: inherit;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            outline: none;
+            min-height: 20px;
+            max-height: 120px;
+        }
+
+        #messageInput::placeholder {
+            color: #94a3b8;
+        }
+
+        #sendButton {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 8px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: white;
+        }
+
+        #sendButton:hover:not(:disabled) {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        #sendButton:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .input-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+
+        .demo-notice {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            color: #92400e;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .demo-notice strong {
+            color: #78350f;
+        }
+
+        .typing-indicator {
+            display: none;
+        }
+
+        .typing-dots {
+            display: flex;
+            gap: 4px;
+        }
+
+        .typing-dots span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #94a3b8;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+
+        .typing-dots span:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dots span:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes typing {
+            0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+            40% { transform: scale(1); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .chat-container {
+                height: calc(100vh - 20px);
+                border-radius: 15px;
+            }
+            
+            .chat-header {
+                padding: 20px;
+            }
+            
+            .chat-header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .chat-messages {
+                padding: 20px;
+            }
+            
+            .message-content {
+                max-width: 85%;
+            }
+            
+            .chat-input-container {
+                padding: 15px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <header class="chat-header">
+            <h1>Tercih Sihirbazı</h1>
+            <p>Üniversite tercih sürecinizde size yardımcı olmak için buradayım</p>
+        </header>
+        
+        <div class="chat-messages" id="chatMessages">
+            <div class="demo-notice">
+                <strong>Demo Modu:</strong> Bu, Tercih Sihirbazı'nın demo versiyonudur. Gerçek verilerle çalışmak için Node.js sunucusunu başlatın.
+            </div>
+            
+            <div class="welcome-message">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        <p>Merhaba! Ben Tercih Sihirbazı. Üniversite tercih sürecinizde size yardımcı olmak için buradayım.</p>
+                        <p>Aşağıdaki konularda sorularınızı yanıtlayabilirim:</p>
+                        <ul>
+                            <li>Net hesaplama ve puan tahmini</li>
+                            <li>Üniversite ve bölüm bilgileri</li>
+                            <li>Tercih stratejileri</li>
+                            <li>Geçmiş yıl taban puanları</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="example-questions">
+                    <h3>Örnek sorular:</h3>
+                    <div class="example-question" onclick="sendExampleQuestion(this)">
+                        "Matematik 25, Türkçe 30, Fen 20, Sosyal 15 net ile hangi mühendislik bölümlerini tercih edebilirim?"
+                    </div>
+                    <div class="example-question" onclick="sendExampleQuestion(this)">
+                        "İTÜ Bilgisayar Mühendisliği için kaç net gerekir?"
+                    </div>
+                    <div class="example-question" onclick="sendExampleQuestion(this)">
+                        "Ankara'daki tıp fakültelerinin taban puanları nedir?"
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="typing-indicator" id="typingIndicator">
+            <div class="message bot-message">
+                <div class="message-content">
+                    <div class="typing-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chat-input-container">
+            <form class="chat-input-form" id="chatForm">
+                <div class="input-wrapper">
+                    <textarea 
+                        id="messageInput" 
+                        placeholder="Sorunuzu buraya yazın..." 
+                        rows="1"
+                        maxlength="500"
+                    ></textarea>
+                    <button type="submit" id="sendButton" disabled>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 21L23 12L2 3V10L17 12L2 14V21Z" fill="currentColor"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="input-footer">
+                    <span class="char-count">0/500</span>
+                    <span>Demo modunda çalışıyor</span>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        // Demo responses
+        const demoResponses = {
+            'matematik': 'Matematik netiniz oldukça iyi! SAY puan türünde mühendislik bölümlerini değerlendirebilirsiniz. 25 matematik neti ile orta seviye üniversitelerin mühendislik bölümlerinde şansınız var.',
+            'itü': 'İTÜ Bilgisayar Mühendisliği çok prestijli bir bölüm. Genellikle 35+ matematik, 30+ fen neti gerekir. 2024 yılında taban puanı yaklaşık 520 civarındaydı.',
+            'tıp': 'Ankara\'daki tıp fakülteleri için çok yüksek puanlar gerekiyor. Hacettepe Tıp: ~550 puan, Ankara Üniversitesi Tıp: ~545 puan, Gazi Tıp: ~540 puan civarında.',
+            'default': 'Bu demo versiyonunda sınırlı yanıtlar verebiliyorum. Tam özellikli sürüm için Node.js sunucusunu başlatın. Matematik, İTÜ veya tıp hakkında sorular sorabilirsiniz.'
+        };
+
+        // DOM elements
+        const chatMessages = document.getElementById('chatMessages');
+        const messageInput = document.getElementById('messageInput');
+        const sendButton = document.getElementById('sendButton');
+        const chatForm = document.getElementById('chatForm');
+        const charCount = document.querySelector('.char-count');
+        const typingIndicator = document.getElementById('typingIndicator');
+
+        // Auto-resize textarea
+        messageInput.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = Math.min(this.scrollHeight, 120) + 'px';
+            
+            // Update character count
+            const count = this.value.length;
+            charCount.textContent = `${count}/500`;
+            
+            // Enable/disable send button
+            sendButton.disabled = count === 0;
+        });
+
+        // Handle form submission
+        chatForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const message = messageInput.value.trim();
+            if (message) {
+                sendMessage(message);
+            }
+        });
+
+        // Send message function
+        function sendMessage(message) {
+            // Add user message
+            addMessage(message, 'user');
+            
+            // Clear input
+            messageInput.value = '';
+            messageInput.style.height = 'auto';
+            charCount.textContent = '0/500';
+            sendButton.disabled = true;
+            
+            // Show typing indicator
+            showTypingIndicator();
+            
+            // Generate response after delay
+            setTimeout(() => {
+                hideTypingIndicator();
+                const response = generateResponse(message);
+                addMessage(response, 'bot');
+            }, 1500 + Math.random() * 1000);
+        }
+
+        // Add message to chat
+        function addMessage(content, type) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}-message`;
+            
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'message-content';
+            contentDiv.innerHTML = content.replace(/\n/g, '<br>');
+            
+            messageDiv.appendChild(contentDiv);
+            chatMessages.appendChild(messageDiv);
+            
+            // Scroll to bottom
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Generate demo response
+        function generateResponse(message) {
+            const lowerMessage = message.toLowerCase();
+            
+            if (lowerMessage.includes('matematik') || lowerMessage.includes('net')) {
+                return demoResponses.matematik;
+            } else if (lowerMessage.includes('itü') || lowerMessage.includes('bilgisayar')) {
+                return demoResponses.itü;
+            } else if (lowerMessage.includes('tıp') || lowerMessage.includes('ankara')) {
+                return demoResponses.tıp;
+            } else {
+                return demoResponses.default;
+            }
+        }
+
+        // Show/hide typing indicator
+        function showTypingIndicator() {
+            typingIndicator.style.display = 'block';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function hideTypingIndicator() {
+            typingIndicator.style.display = 'none';
+        }
+
+        // Handle example questions
+        function sendExampleQuestion(element) {
+            const question = element.textContent.replace(/"/g, '');
+            messageInput.value = question;
+            messageInput.dispatchEvent(new Event('input'));
+            sendMessage(question);
+        }
+
+        // Handle Enter key
+        messageInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                if (!sendButton.disabled) {
+                    chatForm.dispatchEvent(new Event('submit'));
+                }
+            }
+        });
+
+        console.log('🎯 Tercih Sihirbazı Demo loaded successfully!');
+        console.log('💡 To run the full version with real data:');
+        console.log('   1. Install Node.js');
+        console.log('   2. Run: npm install');
+        console.log('   3. Run: npm run dev');
+    </script>
+</body>
+</html>

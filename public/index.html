@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tercih Sihirbazı - Üniversite Tercih Danışmanı</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="eos-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="chat-container">
+        <header class="chat-header">
+            <h1>Tercih Sihirbazı</h1>
+            <p>Üniversite tercih sürecinizde size yardımcı olmak için buradayım</p>
+        </header>
+        
+        <div class="chat-messages" id="chatMessages">
+            <div class="welcome-message">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        <p>Merhaba! Ben Tercih Sihirbazı. Üniversite tercih sürecinizde size yardımcı olmak için buradayım.</p>
+                        <p>Aşağıdaki konularda sorularınızı yanıtlayabilirim:</p>
+                        <ul>
+                            <li>Net hesaplama ve puan tahmini</li>
+                            <li>Üniversite ve bölüm bilgileri</li>
+                            <li>Tercih stratejileri</li>
+                            <li>Geçmiş yıl taban puanları</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="example-questions">
+                    <h3>Örnek sorular:</h3>
+                    <div class="example-question" data-question="Matematik 25, Türkçe 30, Fen 20, Sosyal 15 net ile hangi mühendislik bölümlerini tercih edebilirim?">
+                        "Matematik 25, Türkçe 30, Fen 20, Sosyal 15 net ile hangi mühendislik bölümlerini tercih edebilirim?"
+                    </div>
+                    <div class="example-question" data-question="İTÜ Bilgisayar Mühendisliği için kaç net gerekir?">
+                        "İTÜ Bilgisayar Mühendisliği için kaç net gerekir?"
+                    </div>
+                    <div class="example-question" data-question="Ankara'daki tıp fakültelerinin taban puanları nedir?">
+                        "Ankara'daki tıp fakültelerinin taban puanları nedir?"
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="typing-indicator" id="typingIndicator" style="display: none;">
+            <div class="message bot-message">
+                <div class="message-content">
+                    <div class="typing-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chat-input-container">
+            <form class="chat-input-form" id="chatForm">
+                <div class="input-wrapper">
+                    <textarea 
+                        id="messageInput" 
+                        placeholder="Sorunuzu buraya yazın..." 
+                        rows="1"
+                        maxlength="500"
+                    ></textarea>
+                    <button type="submit" id="sendButton" disabled>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 21L23 12L2 3V10L17 12L2 14V21Z" fill="currentColor"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="input-footer">
+                    <span class="char-count">0/500</span>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
